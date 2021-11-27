@@ -1,0 +1,65 @@
+version: "3.7"
+services:
+# MySQL Service
+   db:
+     image: mysql:5.7
+     container_name: db
+     restart: unless-stopped
+     tty: true
+     ports:
+       - "3306:3306"
+     environment:
+       MYSQL_DATABASE: blogdb
+       MYSQL_USER: laravel
+       MYSQL_PASSWORD: laravelpassworddb
+       MYSQL_ROOT_PASSWORD: rootpasswordmysql
+       SERVICE_TAGS: dev
+       SERVICE_NAME: mysql
+     volumes:
+       - mysqldata:/var/lib/mysql/
+     networks:
+       - appnetwork
+# Laravel App
+   app:
+     build:
+       context: .
+       dockerfile: Dockerfile
+     image: ralphdev/laravelblog
+     container_name: appblog
+     depends_on:
+        - db
+     restart: unless-stopped
+     tty: true
+     environment:
+       SERVICE_NAME: app
+       SERVICE_TAGS: dev
+     working_dir: /var/www/html
+     volumes:
+       - ./:/var/www/html
+     networks:
+       - appnetwork
+# Nginx Service
+   nginx:
+     image: nginx:alpine
+     container_name: webserver
+     restart: unless-stopped
+     tty: true
+     ports:
+       - "80:80"
+       - "443:443"
+     volumes:
+       - ./:/var/www/html
+       - ./nginx/conf.d/:/etc/nginx/conf.d/
+       - ./nginx/ssl/:/etc/nginx/ssl/
+     networks:
+       - appnetwork
+
+# Volumes
+volumes:
+  mysqldata:
+# Docker Networks
+networks:
+  appnetwork:
+    driver: bridge
+    ipam:
+      driver: default
