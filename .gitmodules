@@ -1,0 +1,3 @@
+[submodule "laradock"]
+	path = container-pet-book
+	url = https://github.com/Laradock/laradock.git
