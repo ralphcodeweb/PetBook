@@ -13,3 +13,4 @@ yarn-error.log
 
 ## Laradock Containers
 /laradock-pet-book*
+.DS_Store
