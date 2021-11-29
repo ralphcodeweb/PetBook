@@ -1,11 +1,5 @@
 @extends('admin.layout')
 
-@push('plugincss')
-<link href="/sheruadmin/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
-<link href="/sheruadmin/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-<link href="/sheruadmin/libs/summernote/summernote-bs4.css" rel="stylesheet" />
-@endpush
-
 @section('header')
     <nav aria-label="breadcrumb" class="float-right mt-1">
         <ol class="breadcrumb">
@@ -83,6 +77,9 @@
                         @error('category') <div class="invalid-feedback"> {{ $message }}</div>@enderror
                     </div>
                     <div class="form-group">
+                        <div class="dropzone"></div>
+                    </div>
+                    <div class="form-group">
                         <label>Tags</label>
                         <select name="tags[]"
                         class="form-control wide select2 @error('tags') is-invalid @enderror"
@@ -105,10 +102,19 @@
 </form>
 @endsection
 
+@push('plugincss')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css">
+<link href="/sheruadmin/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="/sheruadmin/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+<link href="/sheruadmin/libs/summernote/summernote-bs4.css" rel="stylesheet" />
+@endpush
+
 @push('pluginjs')
 <script src="/sheruadmin/libs/select2/select2.min.js"></script>
 <script src="/sheruadmin/libs/flatpickr/flatpickr.min.js"></script>
 <script src="/sheruadmin/libs/summernote/summernote-bs4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+
 <script>
 	$("#basic-datepicker").flatpickr({
 		enableTime: !0,
@@ -121,5 +127,26 @@
 		focus: !1
 	});
 	$('.select2').select2();
+
+    //Dropzone
+    let myDropzone = new Dropzone('.dropzone', {
+
+        'url': '{{ request()->fullUrl() }}'+'/photos',
+        'paramName': 'photo',
+        'acceptedFiles': 'image/*',
+        'maxFilesize': 2,
+        'headers': {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        'dictDefaultMessage': 'Subir Imágenes'
+    });
+
+    myDropzone.on('error', function(file, res){
+
+        var msg =  res.errors.photo[0];
+        $(".dz-error-message:last > span").text(msg);
+    });
+
+    Dropzone.autoDiscover = false;
 </script>
 @endpush

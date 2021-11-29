@@ -1,6 +1,6 @@
 .container{
-	padding-right: 15px;
-  	padding-left: 15px;
+	/* padding-right: 15px;
+  	padding-left: 15px; */
   	margin-right: auto;
   	margin-left: auto;
 }
@@ -24,7 +24,7 @@
     width: 930px;
   }
   .no-desktop{
-  	display: none !important; 
+  	display: none !important;
   }
 }
 .container-fluid{
@@ -142,3 +142,24 @@
 	padding-bottom: 5px;
 }
 
+/* Mis estilos */
+.image-w-text.container{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(0,0,0,.7);
+}
+
+.gallery-photos{
+    overflow: hidden;
+}

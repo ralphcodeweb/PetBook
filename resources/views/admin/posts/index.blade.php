@@ -26,7 +26,7 @@
                 <button type="button" class="btn btn-primary float-right btn-sm" data-toggle="modal" data-target="#bs-example-modal-xl"><i data-feather="plus" class="icon-xs"></i> Nuevo post </button>
                 <p class="sub-header">Se reflejaran todos los posts hasta el origen del tiempo</p>
 
-                <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                <table id="datatable-buttons" class="table table-striped">{{-- dt-responsive nowrap --}}
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -42,10 +42,10 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->excerpt }}</td>
                             <td>
-                                <a href="" class="btn btn-light btn-sm" data-toggle="tooltip" data-placement="left" title="Ver">
+                                <a href="{{ route('post.show', $post) }}" target="_blank" class="btn btn-light btn-sm" data-toggle="tooltip" data-placement="left" title="Ver">
                                     <i data-feather="eye" class="icon-xs"></i>
                                 </a>
-                                <a href="" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left" title="Editar">
+                                <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left" title="Editar">
                                     <i data-feather="edit" class="icon-xs"></i>
                                 </a>
                                 <a href="" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="right" title="Eliminar">

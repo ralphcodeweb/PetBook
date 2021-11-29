@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'PagesController@home');
-Route::get('blog/{post}', 'PostsController@show');
+Route::get('blog/{post}', 'PostsController@show')->name('post.show');
 
 Route::group([
 	'prefix' => 'admin',
@@ -18,6 +18,8 @@ Route::group([
 	Route::post('posts', 'PostsController@store')->name('admin.posts.store');
 	Route::get('posts/{post}', 'PostsController@edit')->name('admin.posts.edit');
 	Route::put('posts/{post}', 'PostsController@update')->name('admin.posts.update');
+
+	Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');
 
 });
 
