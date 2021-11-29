@@ -93,6 +93,13 @@
         <!-- App plugin js -->
         @stack('pluginjs')
 
+        <script>
+            let logout = () => {
+                event.preventDefault();
+                document.getElementById('form-logout').submit();
+            };
+        </script>
+
         <!-- App js -->
         <script src="/sheruadmin/js/app.min.js"></script>
     </body>

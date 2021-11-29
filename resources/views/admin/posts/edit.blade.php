@@ -100,6 +100,29 @@
 		</div>
 	</div>
 </form>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    @foreach ($post->photos as $photo)
+                    <div class="col-md-2">
+                        <form method="POST" action="{{ route('admin.photos.destroy', $photo->id) }}">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger btn-xs" style="position: absolute" type="submit">
+                                <i data-feather="trash-2" class="icon-xs"></i>
+                            </button>
+                            <img class="img-fluid" src="{{ url($photo->url) }}" alt="Fotos">
+                        </form>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @push('plugincss')
@@ -121,7 +144,7 @@
 		dateFormat: "Y-m-d",
 	}),
 	$("#contenidoPublic").summernote({
-		height: 250,
+		height: 315,
 		minHeight: null,
 		maxHeight: null,
 		focus: !1

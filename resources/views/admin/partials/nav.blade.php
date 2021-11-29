@@ -35,10 +35,13 @@
 
                 <div class="dropdown-divider"></div>
 
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a onclick="logout()" class="dropdown-item notify-item">
                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
                     <span>Logout</span>
                 </a>
+                <form action="{{ route('logout') }}" id="form-logout" method="post" style="display: none">
+                    {{ csrf_field() }}
+                </form>
             </div>
         </div>
     </div>
