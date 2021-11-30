@@ -13,7 +13,7 @@
                 <span data-feather="chevron-down"></span>
             </a>
             <div class="dropdown-menu profile-dropdown">
-                <a href="pages-profile.html" class="dropdown-item notify-item">
+                {{-- <a href="pages-profile.html" class="dropdown-item notify-item">
                     <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                     <span>My Account</span>
                 </a>
@@ -31,7 +31,7 @@
                 <a href="pages-lock-screen.html" class="dropdown-item notify-item">
                     <i data-feather="lock" class="icon-dual icon-xs mr-2"></i>
                     <span>Lock Screen</span>
-                </a>
+                </a> --}}
 
                 <div class="dropdown-divider"></div>
 
@@ -71,12 +71,12 @@
                                 <span> Ver todos los Posts </span>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('admin.posts.create') }}">
                                 <i data-feather="edit-2" class="icon-dual"></i>
                                 <span>Crear Post</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
             </ul>

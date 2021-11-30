@@ -8,29 +8,29 @@ File: Main Css File
 */
 /* =======================
     TABLE OF CSS
-    1. Fonts 
-    2. General 
-    3. Left Menu 
-    4. Topbar 
-    5. Page Head 
-    6. Footer 
-    7. Horizontal Nav 
-    8. Right Sidebar 
-    9. Layouts 
-    10. Helper 
-    11. Social 
-    12. Widgets 
-    13. Custom Checkbox 
-    14. Custom Radio 
-    15. Print 
-    16. Preloader 
-    17. Plugins 
-    18. Components Demo 
-    19. Tasks 
-    20. Email 
-    21. Timeline 
-    22. Extra Pages 
-    23. Authentication 
+    1. Fonts
+    2. General
+    3. Left Menu
+    4. Topbar
+    5. Page Head
+    6. Footer
+    7. Horizontal Nav
+    8. Right Sidebar
+    9. Layouts
+    10. Helper
+    11. Social
+    12. Widgets
+    13. Custom Checkbox
+    14. Custom Radio
+    15. Print
+    16. Preloader
+    17. Plugins
+    18. Components Demo
+    19. Tasks
+    20. Email
+    21. Timeline
+    22. Extra Pages
+    23. Authentication
    ======================= */
 /* 1. Fonts */
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,900&display=swap");
@@ -2810,7 +2810,7 @@ body.authentication-bg {
 
 .auth-page-sidebar {
   padding: 0;
-  background-image: url("../images/auth-bg.jpg");
+  background-image: url("../../img/pet03.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;

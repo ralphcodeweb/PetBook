@@ -154,14 +154,14 @@
     //Dropzone
     let myDropzone = new Dropzone('.dropzone', {
 
-        'url': '{{ request()->fullUrl() }}'+'/photos',
-        'paramName': 'photo',
-        'acceptedFiles': 'image/*',
-        'maxFilesize': 2,
-        'headers': {
+        url: '{{ request()->fullUrl() }}'+'/photos',
+        paramName: 'photo',
+        acceptedFiles: ".jpeg,.jpg,.png",
+        maxFilesize: 2,
+        headers: {
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         },
-        'dictDefaultMessage': 'Subir Imágenes'
+        dictDefaultMessage: 'Subir Imágenes'
     });
 
     myDropzone.on('error', function(file, res){
@@ -169,6 +169,10 @@
         var msg =  res.errors.photo[0];
         $(".dz-error-message:last > span").text(msg);
     });
+
+    //myDropzone.on("complete", function(file) {
+        //myDropzone.removeFile(file);
+    //});
 
     Dropzone.autoDiscover = false;
 </script>

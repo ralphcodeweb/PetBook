@@ -37,7 +37,7 @@ class PostsController extends Controller
         // Creo
         $post = new Post;
         $post->title = $request->title;
-        $post->slug = str_slug($request->title);
+        $post->url = str_slug($request->title);
         $post->save();
 
         // Retorno
@@ -66,7 +66,7 @@ class PostsController extends Controller
         );
 
         $post->title = $request->title;
-        $post->slug = str_slug($request->title);
+        $post->url = str_slug($request->title);
         $post->body = $request->body;
         $post->excerpt = $request->excerpt;
         $post->published_at = $request->filled('published_at') ? Carbon::parse($request->published_at)->now() : null;

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Shreyu - Admin & Dashboard Template</title>
+        <title>PetBook - Admin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -14,7 +14,7 @@
         <!-- App css -->
         <link href="/sheruadmin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/sheruadmin/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="/sheruadmin/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="/sheruadmin/css/app.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body class="authentication-bg">
@@ -27,11 +27,6 @@
                             <div class="card-body p-0">
                                 <div class="row">
                                     <div class="col-md-6 p-5">
-                                        <div class="mx-auto mb-5">
-                                            <a href="/">
-                                                <img src="/sheruadmin/images/logo-final.png" alt="" height="50" />
-                                            </a>
-                                        </div>
 
                                         <h6 class="h5 mb-0 mt-4">Bienvenido!</h6>
                                         <p class="text-muted mt-1 mb-4">Ingresa tu email y contraseña para acceder al panel de administración.</p>
@@ -85,15 +80,15 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group mb-4">
+                                            {{-- <div class="form-group mb-4">
                                                 <div class="custom-control custom-checkbox">
                                                     <input name="remember" type="checkbox" class="custom-control-input" id="checkbox-signin" {{ old('remember') ? 'checked' : '' }}>
                                                     <label class="custom-control-label" for="checkbox-signin">{{ __('Remember Me') }}</label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="form-group mb-0 text-center">
-                                                <button class="btn btn-primary btn-block" type="submit"> Log In</button>
+                                                <button class="btn btn-primary btn-block" type="submit"> Ingresar</button>
                                             </div>
                                         </form>
                                         {{--
@@ -125,11 +120,11 @@
                         </div>
                         <!-- end card -->
 
-                        <div class="row mt-3">
+                        {{-- <div class="row mt-3">
                             <div class="col-12 text-center">
                                 <p class="text-muted">Don't have an account? <a href="{{ url('register') }}" class="text-primary font-weight-bold ml-1">Sign Up</a></p>
                             </div> <!-- end col -->
-                        </div>
+                        </div> --}}
                         <!-- end row -->
 
                     </div> <!-- end col -->

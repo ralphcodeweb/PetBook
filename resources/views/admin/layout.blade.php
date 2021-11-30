@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Ralphcode - Admin & Dashboard</title>
+        <title>Petbook - Admin & Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="/sheruadmin/images/logo-f.png">
+        <link rel="shortcut icon" href="/img/img-pet-book.png">
 
         <!-- App plugin css -->
         @stack('plugincss')
@@ -33,7 +33,7 @@
                     <!-- LOGO -->
                     <a href="{{ route('dashboard') }}" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="/sheruadmin/images/logo-final.png" alt="" height="35" />
+                            <img src="/img/img-pet-book.png" alt="" height="35" />
                         </span>
                         <span class="logo-sm">
                             <img src="/sheruadmin/images/logo-f.png" alt="" height="24">
